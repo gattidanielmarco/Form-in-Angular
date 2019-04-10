@@ -1,0 +1,86 @@
+<div class="container">
+ <h2>Demo Form: Sku</h2>
+ <form [formGroup]="myForm"
+       (ngSubmit)="onSubmit(myForm.value)"
+       class="jumbotron">
+
+   <div class="form-group">
+     <label for="skuInput">SKU</label>
+     <input type="text"
+           id="skuInput"
+           placeholder="SKU"
+           name="sku"
+           [formControl]="myForm.controls['sku']"
+           class="form-control">
+   </div>
+
+   <div *ngIf="!myForm.controls['sku'].valid"
+         class="alert alert-danger">SKU is invalid
+   </div>
+   <div *ngIf="myForm.controls['sku'].hasError('required')"
+         class="alert alert-danger">SKU is required
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+  
+ <div *ngIf="!myForm.valid"
+ class="alert alert-danger">Form is invalid</div>
+</div>
+
+<div class="container">
+ <h2>Demo Form: Color</h2>
+ <form [formGroup]="myForm2"
+       (ngSubmit)="onSubmit(myForm2.value)"
+       class="jumbotron">
+
+   <div class="form-group">
+     <label for="colorInput">Color</label>
+     <input type="color"
+           id="colorInput"
+           placeholder="Color"
+           name="color"
+           [formControl]="myForm2.controls['color']"
+           class="form-control">
+   </div>
+
+   <div *ngIf="!myForm2.controls['color'].valid"
+         class="alert alert-danger">Color is invalid
+   </div>
+   <div *ngIf="myForm2.controls['color'].hasError('required')"
+         class="alert alert-danger">Color is required
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+  
+ <div *ngIf="!myForm2.valid"
+ class="alert alert-danger">Form is invalid</div>
+</div>
+
+<div class="container">
+ <h2>Demo Form: Month</h2>
+ <form [formGroup]="myForm3"
+       (ngSubmit)="onSubmit(myForm3.value)"
+       class="jumbotron">
+
+   <div class="form-group">
+     <label for="monthInput">Month</label>
+     <input type="month"
+           id="monthInput"
+           placeholder="Month"
+           name="month"
+           [formControl]="myForm3.controls['month']"
+           class="form-control">
+   </div>
+
+   <div *ngIf="!myForm3.controls['month'].valid"
+         class="alert alert-danger">Month is invalid
+   </div>
+   <div *ngIf="myForm3.controls['month'].hasError('required')"
+         class="alert alert-danger">Month is required
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+  
+ <div *ngIf="!myForm3.valid"
+ class="alert alert-danger">Form is invalid</div>
+</div>
